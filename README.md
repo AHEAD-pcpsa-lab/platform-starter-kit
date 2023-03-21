@@ -4,8 +4,6 @@
 
 TODO
 
----
-
 ## Requirements
 
 ### Required software
@@ -38,10 +36,8 @@ TODO
 ### Run in Docker
 TODO
 
----
-
 ## Development and Contributing  
 
-[Contributor guide](CONTRIBUTING.md)
-
 [Developer guide](docs/guide-development.md)
+
+[Contributor guide](CONTRIBUTING.md)

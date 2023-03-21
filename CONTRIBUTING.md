@@ -6,8 +6,6 @@ When contributing to this project please follow guidane to help speed up testing
 
 This contribution guide assumes you have at least a basic understanding of PowerShell and [Terraform](https://www.terraform.io/docs/language/index.html).
 
----
-
 ## Basics
 
 * [Overview of the Project](#overview)
@@ -24,13 +22,9 @@ This contribution guide assumes you have at least a basic understanding of Power
 * [Markdown coding syntax](#markdown-coding-syntax)
 * [Terraform coding syntax](#terraform-coding-syntax)
 
----
-
 ## Overview
 
 TODO
-
----
 
 ## Project structure
 
