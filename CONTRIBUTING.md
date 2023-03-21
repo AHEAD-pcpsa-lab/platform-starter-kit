@@ -57,7 +57,8 @@ TODO
 
 ## Deployment workflow
 
-TODO
+![Deployment workflow design](./docs/platform-deployment.png "Deployment Workflow")
+
 
 ## Coding syntax references
 
@@ -71,7 +72,7 @@ Files and folders should be named consistently.
 
 ### Markdown coding syntax
 
-TODO
+* [Online referene](https://www.markdownguide.org/basic-syntax)
 
 ### Terraform coding syntax
 
