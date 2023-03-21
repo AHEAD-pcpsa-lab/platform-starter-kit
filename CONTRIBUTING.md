@@ -30,6 +30,8 @@ This contribution guide assumes you have at least a basic understanding of Power
 
 TODO
 
+---
+
 ## Project structure
 
 ### Top-level directory layout
@@ -54,11 +56,22 @@ TODO
         ├── orchestration           # DevOps resources and configuration
         └── security                # CSP Security resources and configuration
 
+---
 
 ## Deployment workflow
 
 ![Deployment workflow design](./docs/platform-deployment.png "Deployment Workflow")
 
+### Guiding principles
+* Deployment model should align with layered reference architecture
+* Each layer is a security boundary
+* Isolate state mgmt. per layer (one storage account, blob container per layer, scope RBAC to container)
+* Isolate identity per layer (Azure AD SP per layer) 
+* Layers 1 - 2 will deploy core platform services and workloads.  
+* Layer 3 will deploy requested cloud landing zone subscriptions and fundamental services
+* Layer 4 will deploy delegated access and solution accelerators to specificed landing zones 
+
+---
 
 ## Coding syntax references
 
