@@ -1,9 +1,13 @@
 # Development Guide
 
 ## Development requirements
- * Git
+
+* Git
+* Terraform
+* Azure CLI
+
+We recommend using [this local dev environment build automation](https://github.com/common-cloud/platform-dev-ux) to install dev requirements. 
 
  ---
 
-1. Step
-2. Step
+TODO
