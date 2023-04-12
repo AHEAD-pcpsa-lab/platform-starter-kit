@@ -8,7 +8,7 @@ TODO
 
 ## Codebase structure
 
-    Platform module code repo (IaC module code)
+### Platform IaC module code repo
     .
     └── root
         ├── .vscode             # VS Code dev workspace settings
@@ -21,16 +21,16 @@ TODO
         ├── storage             # Storage resource modules
         ├── compute             # Compute resource modules
 
-    Platform level live code repo (IaC module instantiation)
+### Platform live code repo (one per platform architecture level)
     .
     └── root
         ├── .vscode             # VS Code dev workspace settings
         ├── docs                # Repo docs
         ├── scripts             # Scripts required artifacts            
         └── live                    # IaC live code
-            └──domain          # Operating domains [governance, identity, etc.]
-                └── cloud-provider      # CSPs [AWS, Azure, GCP]
-                    └── cloud-region      # Regions [east-us, west-us]
+            └──domain                   # Operating domain [governance, identity, etc.]
+                └── cloud-provider          # CSPs [aws, azure, gcp]
+                    └── cloud-region            # Regions [eastus, westus]
 
 ## Deployment
 
