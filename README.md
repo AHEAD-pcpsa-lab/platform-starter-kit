@@ -6,24 +6,35 @@
 
 TODO
 
+
+
 ## Codebase structure
 
-### Repo layout
-
+    Platform module code repo (IaC module code)
     .
-    └── platform-layer-0
-        ├── .vscode                 # IDE workspace config files
-        ├── docs                    # Documentation files
-        ├── infra                   # Infrastructure as Code source files
-        ├── scripts                 # Scripted workflows
-        ├── tests                   # Automated tests
-        ├── CONTRIBUTING      
-        ├── LICENSE
-        └── README.md
+    └── root
+        ├── .vscode             # VS Code dev workspace settings
+        ├── docs                # Repo docs
+        ├── governance          # Governance resource modules
+        ├── identity            # IaM resource modules
+        ├── security            # Security resource modules
+        ├── network             # Network resource modules
+        ├── automation          # Automation resource modules 
+        ├── storage             # Storage resource modules
+        ├── compute             # Compute resource modules
 
-## Deployment workflow
+    Platform level live code repo (IaC module instantiation)
+    .
+    └── root
+        ├── .vscode             # VS Code dev workspace settings
+        ├── docs                # Repo docs
+        ├── scripts             # Scripts required artifacts            
+        └── live                    # IaC live code
+            └──domain          # Operating domains [governance, identity, etc.]
+                └── cloud-provider      # CSPs [AWS, Azure, GCP]
+                    └── cloud-region      # Regions [east-us, west-us]
 
-![Deployment workflow design](./docs/platform-deployment.png "Deployment Workflow")
+## Deployment
 
 ### Guiding principles
 * Deployment model should align with layered reference architecture
@@ -32,33 +43,31 @@ TODO
 * Isolate identity per layer (Azure AD SP per layer) 
 * Layers 1 - 2 will deploy core platform services and workloads.  
 * Layer 3 will deploy requested cloud landing zone subscriptions and fundamental services
-* Layer 4 will deploy delegated access and solution accelerators to specificed landing zones 
+* Layer 4 will deploy delegated access and solution accelerators to specificed landing zones
 
----
+### Flow diagram
+![Deployment workflow design](./docs/platform-deployment.png "Deployment Workflow")
 
-## Requirements
+## Setup requirements
 
-### Required software
+### Software
 
 * Required software
-
 
 This project has been tested with the following versions of required software
 
     Software v0.0.1
- 
 
-### Required access
+### Access
 
 TODO
 
-
-## Setup
+## Setup workflow
 
 1. Download
 2. [Build](#build)
 
-## Build
+## Build workflow
 
 ### Local build
 
