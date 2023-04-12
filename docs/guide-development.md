@@ -15,7 +15,3 @@
 * Azure AD Tenant (Azure AD app and group admin role)
 * Azure (Owner role at root group scope)
 * Azure billing account (Invoice section owner role at invoice section scope)
-
-## Local dev environment
-
-We recommend using [this local dev environment build automation](https://github.com/common-cloud/platform-dev-ux).
