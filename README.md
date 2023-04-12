@@ -6,8 +6,6 @@
 
 TODO
 
-
-
 ## Codebase structure
 
     Platform module code repo (IaC module code)
