@@ -2,11 +2,25 @@
 
 > **Note:** this documentation is a work-in-progress - if you see something that's not quite right or missing, we'd really appreciate a PR!
 
-## Overview
+Build a cloud-native application, data, and cloud services hosting platform using Infrastructure as Code and GitOps best practices.
 
-TODO
+## Platform user-centric features and benefits
 
-## Repo codebase structure
+1. feature a
+2. feature b
+3. feature c
+
+## Platform capabilites (these enable features above)
+
+1. capability a
+2. capability b
+3. capability c
+
+## Roadmap
+
+1. Future feature x by implementing capability y, and z.
+
+## Codebase structure
     .
     └── root
         ├── .vscode             # VS Code dev workspace settings
@@ -48,7 +62,7 @@ TODO
 ### Platform deployment workflow
 ![Deployment workflow design](./docs/images/platform-deployment.png "Deployment Workflow")
 
-## Setup requirements
+## Deployment requirements
 
 ### Software
 
@@ -69,7 +83,7 @@ This project has been tested with the following versions of required software:
 * Azure (Owner role at root group scope)
 * Azure billing account (Invoice section owner role at invoice section scope)
 
-## Development and Contributing  
+## Development and contributing  
 
 [Developer guide](docs/guide-development.md)
 
