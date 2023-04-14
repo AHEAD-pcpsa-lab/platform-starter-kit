@@ -45,17 +45,22 @@ TODO
 * Layer 3 will deploy requested cloud landing zone subscriptions and fundamental services
 * Layer 4 will deploy delegated access and solution accelerators to specificed landing zones
 
-### Flow diagram
-![Deployment workflow design](./docs/platform-deployment.png "Deployment Workflow")
+### Platform deployment workflow
+![Deployment workflow design](./docs/images/platform-deployment.png "Deployment Workflow")
 
 ## Setup requirements
 
 ### Software
 
 * Git
-* OS CLI ( Bash or PowerShell )
-* Terraform CLI
+* Terraform
 * Azure CLI
+
+This project has been tested with the following versions of required software:
+
+    Git         v2.39.2
+    Terraform   v1.4.x  - <v2.0.0
+    Azure CLI   v2.47.0
 
 ### Access
 
