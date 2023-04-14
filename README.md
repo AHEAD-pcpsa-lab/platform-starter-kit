@@ -16,9 +16,9 @@ TODO
             ├── domain                   # Operating domain [governance, identity, etc.]
             |   └── cloud-provider          # CSPs [aws, azure, gcp, github]
             |       ├── [ mgmt-group ]          # Per mgmt. group deployment [see design]
-            |           ├── main.tf                 # Deployment template
-            |           ├── output.tf               # Deployment outputs
-            |           └── variables.tf            # Deployment variables
+            |       |   ├── main.tf                 # Deployment template
+            |       |   ├── output.tf               # Deployment outputs
+            |       |   └── variables.tf            # Deployment variables
             |       ├── [ region ]              # Per region deployment[see design]
             |       └── [ repo ]                # Per repo deployment [see design]
             └── modules                 # IaC module code
