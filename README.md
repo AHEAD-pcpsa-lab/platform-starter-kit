@@ -13,12 +13,19 @@ TODO
         ├── docs                # Repo docs
         ├── scripts             # Script code            
         └── infra                    # IaC live deplyment code
-            └──domain                   # Operating domain [governance, identity, etc.]
-            |   └── cloud-provider          # CSPs [aws, azure, gcp]
-            |       └── mgmt-group              # Per mgmt. group [see design]
-            |       └── region                  # Per region [see design]
+            ├── domain                   # Operating domain [governance, identity, etc.]
+            |   └── cloud-provider          # CSPs [aws, azure, gcp, github]
+            |       ├── [ mgmt-group ]          # Per mgmt. group deployment [see design]
+            |           ├── main.tf                 # Deployment template
+            |           ├── output.tf               # Deployment outputs
+            |           └── variables.tf            # Deployment variables
+            |       ├── [ region ]              # Per region deployment[see design]
+            |       └── [ repo ]                # Per repo deployment [see design]
             └── modules                 # IaC module code
-                ├── automation              # Automation resource modules 
+                ├── automation              # Automation resource modules
+                |   └── storage-account     # Per resource/service type module
+                |       ├── main.tf                 # Module template
+                |       └── variables.tf            # Module variables
                 ├── compute                 # Compute resource modules
                 ├── governance              # Governance resource modules
                 ├── identity                # IaM resource modules
@@ -53,21 +60,6 @@ This project has been tested with the following versions of required software
 
 ### Access
 
-TODO
-
-## Setup workflow
-
-1. Download
-2. [Build](#build)
-
-## Build workflow
-
-### Local build
-
-1. Step
-2. Step
-
-### Remote build
 TODO
 
 ## Development and Contributing  
