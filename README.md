@@ -1,4 +1,4 @@
-# Platform level 0
+# Public Cloud Platform Level 0
 
 > **Note:** this documentation is a work-in-progress - if you see something that's not quite right or missing, we'd really appreciate a PR!
 
