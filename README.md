@@ -23,7 +23,7 @@ TODO
             |       └── [ repo ]                # Per repo deployment [see design]
             └── modules                 # IaC module code
                 ├── automation              # Automation resource modules
-                |   └── storage-account     # Per resource/service type module
+                |   └── azure-automation    # Per resource/service type module
                 |       ├── main.tf                 # Module template
                 |       └── variables.tf            # Module variables
                 ├── compute                 # Compute resource modules
