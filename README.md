@@ -52,15 +52,17 @@ TODO
 
 ### Software
 
-* Required software
-
-This project has been tested with the following versions of required software
-
-    Software v0.0.1
+* Git
+* OS CLI ( Bash or PowerShell )
+* Terraform CLI
+* Azure CLI
 
 ### Access
 
-TODO
+* GitHub Organization (Org. admin and repo admin roles)
+* Azure AD Tenant (Azure AD app and group admin role)
+* Azure (Owner role at root group scope)
+* Azure billing account (Invoice section owner role at invoice section scope)
 
 ## Development and Contributing  
 

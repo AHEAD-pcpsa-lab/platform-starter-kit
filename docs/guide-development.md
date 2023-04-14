@@ -2,10 +2,10 @@
 
 ## Development requirements
 
-### Local
+### Software
 
 * Git
-* PowerShell
+* OS CLI ( Bash or PowerShell )
 * Terraform CLI
 * Azure CLI
 
