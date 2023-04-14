@@ -1,7 +1,25 @@
 {
 	"folders": [
 		{
-			"path": ".."
+			"path": "."
+		},
+		{
+			"path": "../platform-level-1"
+		},
+		{
+			"name": "platform-level-2",
+			"path": "../platform-level-2"
+		},
+		{
+			"name": "platform-level-3",
+			"path": "../platform-level-3"
+		},
+		{
+			"name": "platform-level-4",
+			"path": "../platform-level-4"
 		}
-	]
+	],
+	"settings": {
+		"git.confirmSync": false
+	}
 }

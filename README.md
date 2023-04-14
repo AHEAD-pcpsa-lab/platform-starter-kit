@@ -1,4 +1,4 @@
-# Platform Layer 0 Starter Kit
+# Platform level 0
 
 > **Note:** this documentation is a work-in-progress - if you see something that's not quite right or missing, we'd really appreciate a PR!
 
@@ -6,31 +6,26 @@
 
 TODO
 
-## Codebase structure
-
-### Platform IaC module code repo
+## Repo codebase structure
     .
     └── root
         ├── .vscode             # VS Code dev workspace settings
         ├── docs                # Repo docs
-        ├── governance          # Governance resource modules
-        ├── identity            # IaM resource modules
-        ├── security            # Security resource modules
-        ├── network             # Network resource modules
-        ├── automation          # Automation resource modules 
-        ├── storage             # Storage resource modules
-        ├── compute             # Compute resource modules
-
-### Platform live code repo (one per platform architecture level)
-    .
-    └── root
-        ├── .vscode             # VS Code dev workspace settings
-        ├── docs                # Repo docs
-        ├── scripts             # Scripts required artifacts            
-        └── live                    # IaC live code
+        ├── scripts             # Script code            
+        └── infra                    # IaC live deplyment code
             └──domain                   # Operating domain [governance, identity, etc.]
-                └── cloud-provider          # CSPs [aws, azure, gcp]
-                    └── cloud-region            # Regions [eastus, westus]
+            |   └── cloud-provider          # CSPs [aws, azure, gcp]
+            |       └── mgmt-group              # Per mgmt. group [see design]
+            |       └── region                  # Per region [see design]
+            └── modules                 # IaC module code
+                ├── automation              # Automation resource modules 
+                ├── compute                 # Compute resource modules
+                ├── governance              # Governance resource modules
+                ├── identity                # IaM resource modules
+                ├── network                 # Network resource modules
+                ├── security                # Security resource modules
+                └── storage                 # Storage resource modules
+
 
 ## Deployment
 
