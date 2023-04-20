@@ -21,7 +21,7 @@ Build a cloud-native application, data, and cloud services hosting platform usin
 1. Future feature x by implementing capability y, and z.
 
 ## Codebase structure (today)
-Single code repo per platform level, each repo includes both level-specific deployment template (live) and custom module code.  
+Single code repo per platform level, each repo includes both level-specific deployment (live) script and custom module code.  
 
     .                           
     └── platform-level-[x]root  # One repo per platform leve
@@ -31,11 +31,11 @@ Single code repo per platform level, each repo includes both level-specific depl
         ├── docs                    # Repo docs
         ├── scripts                 # Script code
         ├── tflint                  # Tflint configs          
-        └── infra                   # Infra deployment code (live)
+        └── infra                   # Infra deployment scripts (live)
             ├── automation               
             ├── governance-finops
             ├── governance-mgmt           # Tech domain deployment
-            |   ├── main.tf                 # Deployment template
+            |   ├── main.tf                 # Deployment script
             |   ├── output.tf               # Deployment outputs
             |   └── variables.tf            # Deployment variables     
             ├── identity                 
@@ -51,7 +51,7 @@ Single code repo per platform level, each repo includes both level-specific depl
                     └── variables.tf            # Module variables
 
 ## Codebase structure (future state)
-Single code repo per platform level, each repo includes level-specific deployment template (live) code. Single code repo per custom module. 
+Single code repo per platform level, each repo includes level-specific deployment template (live) script code. Single code repo per custom module. 
 
     .
     └── platform-level-[x]root  # One repo per platform level
@@ -60,14 +60,14 @@ Single code repo per platform level, each repo includes level-specific deploymen
         ├── .vscode                 # VS Code workspace configs
         ├── docs                    # Repo docs
         ├── scripts                 # Script code            
-        └── infra                   # Infra deployment code (live)
-            ├── [ repo ]                # Per code repo deployment [see design]
+        └── infra                   # Infra deployment scripts (live)
+            ├── [ repo ]                # Per code repo deployments [see design]
             └── [ cloud-provider ]          # CSPs [aws, azure, gcp, github]
                 ├── [ mgmt-group ]          # Per mgmt. group deployments [see design]
-                |   ├── main.tf                 # Deployment template
+                |   ├── main.tf                 # Deployment script
                 |   ├── output.tf               # Deployment outputs
                 |   └── variables.tf            # Deployment variables
-                └── [ region ]              # Per region deployment [see design]
+                └── [ region ]              # Per region deployments [see design]
                     ├── automation              
                     ├── governance-finops       # Tech domain deployment
                     ├── identity                 
