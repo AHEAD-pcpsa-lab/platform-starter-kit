@@ -39,9 +39,9 @@ Single code repo per platform level, each repo includes both level-specific depl
             |   ├── output.tf               # Deployment outputs
             |   └── variables.tf            # Deployment variables     
             ├── identity                 
-            ├── operatins-logging
-            ├── operatins-monitoring
-            ├── operatins-bcdr            
+            ├── operations-logging
+            ├── operations-monitoring
+            ├── operations-bcdr            
             ├── network                 
             ├── security                           
             └── modules                 # Module code
