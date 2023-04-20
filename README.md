@@ -90,7 +90,7 @@ Single code repo per platform level, each repo includes level-specific deploymen
 
 
 
-## Deployment
+## Platform deployment
 
 ### Guiding principles
 * Deployment model should align with layered reference architecture
@@ -101,8 +101,12 @@ Single code repo per platform level, each repo includes level-specific deploymen
 * Layer 3 will deploy requested cloud landing zone subscriptions and fundamental services
 * Layer 4 will deploy delegated access and solution accelerators to specificed landing zones
 
-### Platform deployment workflow
-![Deployment workflow design](./docs/images/platform-deployment.png "Deployment Workflow")
+### Platform GitOps Workflow
+![Deployment workflow](./docs/images/platform-deployment.png "Deployment Workflow")
+
+### GitHub Actions CI/CD Worklfow
+![GitHub actions Workflow](./docs/images/github-actions-workflows.png "GitHub actions Workflow")
+
 
 ## Deployment requirements
 
