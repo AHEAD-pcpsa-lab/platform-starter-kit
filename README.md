@@ -26,7 +26,7 @@ Single code repo per platform level, each repo includes both level-specific depl
     .                           
     └── platform-level-[x]root  # One repo per platform leve
         ├── .github                 # GitHub configs
-        |  └── workflows                # Action configs
+        |   └── workflows                # Action configs
         ├── .vscode                 # VS Code workspace configs
         ├── docs                    # Repo docs
         ├── scripts                 # Script code
@@ -71,9 +71,9 @@ Single code repo per platform level, each repo includes level-specific deploymen
                     ├── automation              
                     ├── governance-finops       # Tech domain deployment
                     ├── identity                 
-                    ├── operatins-logging
-                    ├── operatins-monitoring
-                    ├── operatins-bcdr            
+                    ├── operations-logging
+                    ├── operations-monitoring
+                    ├── operations-bcdr            
                     ├── network                 
                     └── security
     
