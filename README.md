@@ -21,63 +21,76 @@ Build a cloud-native application, data, and cloud services hosting platform usin
 1. Future feature x by implementing capability y, and z.
 
 ## Codebase structure (today)
-    .
-    └── root
-        ├── .github             # GitHub configs
+Single code repo per platform level, each repo includes both level-specific deployment template (live) and custom module code.  
+
+    .                           
+    └── platform-level-[x]root  # One repo per platform leve
+        ├── .github                 # GitHub configs
         |  └── workflows                # Action configs
-        ├── .vscode             # VS Code workspace configs
-        ├── docs                # Repo docs
-        ├── scripts             # Script code
-        ├── tflint              # Tflint configs          
-        └── infra                   # Iac
-            ├── automation              # Live deployment code
+        ├── .vscode                 # VS Code workspace configs
+        ├── docs                    # Repo docs
+        ├── scripts                 # Script code
+        ├── tflint                  # Tflint configs          
+        └── infra                   # Infra deployment code (live)
+            ├── automation               
             ├── governance-finops
-            ├── governance-mgmt        
+            ├── governance-mgmt           # Tech domain deployment
+            |   ├── main.tf                 # Deployment template
+            |   ├── output.tf               # Deployment outputs
+            |   └── variables.tf            # Deployment variables     
             ├── identity                 
             ├── operatins-logging
             ├── operatins-monitoring
             ├── operatins-bcdr            
             ├── network                 
             ├── security                           
-            └── modules                 # IaC module code
-                └── storage                 # Storage resource modules
-                    ├── main.tf                 # Deployment template
-                    ├── output.tf               # Deployment outputs
-                    └── variables.tf            # Deployment variables
+            └── modules                 # Module code
+                └── policy-assignment       # Storage resource modules
+                    ├── main.tf                 # Module template
+                    ├── output.tf               # Module outputs
+                    └── variables.tf            # Module variables
 
 ## Codebase structure (future state)
+Single code repo per platform level, each repo includes level-specific deployment template (live) code. Single code repo per custom module. 
+
     .
-    └── root
-        ├── .github             # GitHub configs
-        |  └── workflows                # Action configs
-        ├── .vscode             # VS Code workspace configs
-        ├── docs                # Repo docs
-        ├── scripts             # Script code            
-        └── infra                   # Iac
-        |   ├── [ repo ]            # Per code repo deployment [see design]
-        |   └── cloud-provider          # CSPs [aws, azure, gcp, github]
-        |       ├── [ mgmt-group ]          # Per mgmt. group deployment [see design]
-        |       |   ├── main.tf                 # Deployment template
-        |       |   ├── output.tf               # Deployment outputs
-        |       |   └── variables.tf            # Deployment variables
-        |       └── [ region ]              # Per region deployment[see design]
-        |           ├── automation              # Live deployment code
-        |           ├── governance-finops
-        |           ├── governance-mgmt        
-        |           ├── identity                 
-        |           ├── operatins-logging
-        |           ├── operatins-monitoring
-        |           ├── operatins-bcdr            
-        |           ├── network                 
-        |           └── security
-        └── modules                     # IaC module code
-                └── storage                 # Storage resource modules
-                    ├── main.tf                 # Deployment template
-                    ├── output.tf               # Deployment outputs
-                    └── variables.tf            # Deployment variables
+    └── platform-level-[x]root  # One repo per platform level
+        ├── .github                 # GitHub configs
+        |   └── workflows                # Action configs
+        ├── .vscode                 # VS Code workspace configs
+        ├── docs                    # Repo docs
+        ├── scripts                 # Script code            
+        └── infra                   # Infra deployment code (live)
+            ├── [ repo ]                # Per code repo deployment [see design]
+            └── [ cloud-provider ]          # CSPs [aws, azure, gcp, github]
+                ├── [ mgmt-group ]          # Per mgmt. group deployments [see design]
+                |   ├── main.tf                 # Deployment template
+                |   ├── output.tf               # Deployment outputs
+                |   └── variables.tf            # Deployment variables
+                └── [ region ]              # Per region deployment [see design]
+                    ├── automation              
+                    ├── governance-finops       # Tech domain deployment
+                    ├── identity                 
+                    ├── operatins-logging
+                    ├── operatins-monitoring
+                    ├── operatins-bcdr            
+                    ├── network                 
+                    └── security
+    
+    .
+    └── azure-policy-assignment-module-root     # One repo per module
+        ├── .github                                 # GitHub configs
+        |   └── workflows                               # Action configs
+        ├── .vscode                                 # VS Code workspace configs
+        ├── docs                                    # Repo docs
+        ├── scripts                                 # Script code 
+        ├── main.tf                                 # Module template
+        ├── output.tf                               # Module outputs
+        └── variables.tf                            # Module variables
 
 
-## Deployment
+
+## Platform deployment
 
 ### Guiding principles
 * Deployment model should align with layered reference architecture
@@ -88,8 +101,12 @@ Build a cloud-native application, data, and cloud services hosting platform usin
 * Layer 3 will deploy requested cloud landing zone subscriptions and fundamental services
 * Layer 4 will deploy delegated access and solution accelerators to specificed landing zones
 
-### Platform deployment workflow
-![Deployment workflow design](./docs/images/platform-deployment.png "Deployment Workflow")
+### Platform GitOps Workflow
+![Deployment workflow](./docs/images/platform-deployment.png "Deployment Workflow")
+
+### GitHub Actions CI/CD Worklfow
+![GitHub actions Workflow](./docs/images/github-actions-workflows.png "GitHub actions Workflow")
+
 
 ## Deployment requirements
 
