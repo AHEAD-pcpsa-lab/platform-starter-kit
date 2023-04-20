@@ -1,4 +1,4 @@
-# Public Cloud Platform Level 0
+# Public Cloud Platform Starter Kit
 
 > **Note:** this documentation is a work-in-progress - if you see something that's not quite right or missing, we'd really appreciate a PR!
 
@@ -20,32 +20,61 @@ Build a cloud-native application, data, and cloud services hosting platform usin
 
 1. Future feature x by implementing capability y, and z.
 
-## Codebase structure
+## Codebase structure (today)
     .
     └── root
-        ├── .vscode             # VS Code dev workspace settings
+        ├── .github             # GitHub configs
+        |  └── workflows                # Action configs
+        ├── .vscode             # VS Code workspace configs
+        ├── docs                # Repo docs
+        ├── scripts             # Script code
+        ├── tflint              # Tflint configs          
+        └── infra                   # Iac
+            ├── automation              # Live deployment code
+            ├── governance-finops
+            ├── governance-mgmt        
+            ├── identity                 
+            ├── operatins-logging
+            ├── operatins-monitoring
+            ├── operatins-bcdr            
+            ├── network                 
+            ├── security                           
+            └── modules                 # IaC module code
+                └── storage                 # Storage resource modules
+                    ├── main.tf                 # Deployment template
+                    ├── output.tf               # Deployment outputs
+                    └── variables.tf            # Deployment variables
+
+## Codebase structure (future state)
+    .
+    └── root
+        ├── .github             # GitHub configs
+        |  └── workflows                # Action configs
+        ├── .vscode             # VS Code workspace configs
         ├── docs                # Repo docs
         ├── scripts             # Script code            
-        └── infra                    # IaC live deplyment code
-            ├── domain                   # Operating domain [governance, identity, etc.]
-            |   └── cloud-provider          # CSPs [aws, azure, gcp, github]
-            |       ├── [ mgmt-group ]          # Per mgmt. group deployment [see design]
-            |       |   ├── main.tf                 # Deployment template
-            |       |   ├── output.tf               # Deployment outputs
-            |       |   └── variables.tf            # Deployment variables
-            |       ├── [ region ]              # Per region deployment[see design]
-            |       └── [ repo ]                # Per repo deployment [see design]
-            └── modules                 # IaC module code
-                ├── automation              # Automation resource modules
-                |   └── azure-automation    # Per resource/service type module
-                |       ├── main.tf                 # Module template
-                |       └── variables.tf            # Module variables
-                ├── compute                 # Compute resource modules
-                ├── governance              # Governance resource modules
-                ├── identity                # IaM resource modules
-                ├── network                 # Network resource modules
-                ├── security                # Security resource modules
+        └── infra                   # Iac
+        |   ├── [ repo ]            # Per code repo deployment [see design]
+        |   └── cloud-provider          # CSPs [aws, azure, gcp, github]
+        |       ├── [ mgmt-group ]          # Per mgmt. group deployment [see design]
+        |       |   ├── main.tf                 # Deployment template
+        |       |   ├── output.tf               # Deployment outputs
+        |       |   └── variables.tf            # Deployment variables
+        |       └── [ region ]              # Per region deployment[see design]
+        |           ├── automation              # Live deployment code
+        |           ├── governance-finops
+        |           ├── governance-mgmt        
+        |           ├── identity                 
+        |           ├── operatins-logging
+        |           ├── operatins-monitoring
+        |           ├── operatins-bcdr            
+        |           ├── network                 
+        |           └── security
+        └── modules                     # IaC module code
                 └── storage                 # Storage resource modules
+                    ├── main.tf                 # Deployment template
+                    ├── output.tf               # Deployment outputs
+                    └── variables.tf            # Deployment variables
 
 
 ## Deployment
