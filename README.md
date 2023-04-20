@@ -69,7 +69,7 @@ Single code repo per platform level, each repo includes level-specific deploymen
                 |   └── variables.tf            # Deployment variables
                 └── [ region ]              # Per region deployment [see design]
                     ├── automation              
-                    ├── governance-finops
+                    ├── governance-finops       # Tech domain deployment
                     ├── identity                 
                     ├── operatins-logging
                     ├── operatins-monitoring
