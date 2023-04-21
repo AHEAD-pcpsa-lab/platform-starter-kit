@@ -4,7 +4,7 @@
 
 Build a cloud-native application, data, and cloud services hosting platform using Infrastructure as Code and GitOps best practices.
 
-## Platform user-centric features and benefits
+## Platform features and benefits (user-centric)
 
 1. feature a
 2. feature b
@@ -18,7 +18,7 @@ Build a cloud-native application, data, and cloud services hosting platform usin
 
 ## Roadmap
 
-1. Future feature x by implementing capability y, and z.
+1. "Future feature x" by implementing capability "y", and "z".
 
 ## Codebase structure (today)
 Single code repo per platform level, each repo includes both level-specific deployment (live) script and custom module code.  
