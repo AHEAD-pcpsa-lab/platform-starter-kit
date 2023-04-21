@@ -24,20 +24,23 @@ Build a cloud-native application, data, and cloud services hosting platform usin
 Single code repo per platform level, each repo includes both level-specific deployment (live) script and custom module code.  
 
     .                           
-    └── platform-level-[x]root  # One repo per platform leve
-        ├── .github                 # GitHub configs
-        |   └── workflows                # Action configs
-        ├── .vscode                 # VS Code workspace configs
-        ├── docs                    # Repo docs
-        ├── scripts                 # Script code
-        ├── tflint                  # Tflint configs          
-        └── infra                   # Infra deployment scripts (live)
+    └── platform-level-[x]          # One repo per platform leve
+        ├── .github                     # GitHub configs
+        |   └── workflows                   # Action configs
+        ├── .vscode                     # VS Code workspace configs
+        ├── docs                        # Repo docs
+        ├── scripts                     # Script code
+        ├── tflint                      # Tflint configs          
+        └── infra                       # Infra deployment scripts (live)
             ├── automation               
             ├── governance-finops
-            ├── governance-mgmt           # Tech domain deployment
-            |   ├── main.tf                 # Deployment script
-            |   ├── output.tf               # Deployment outputs
-            |   └── variables.tf            # Deployment variables     
+            ├── governance-mgmt             # Tech domain deployment
+            |   ├── main.tf                     # Deployment script
+            |   ├── output.tf                   # Deployment output
+            |   ├── provider.tf                 # Deployment provider
+            |   ├── README.md                   # Deployment documentation
+            |   ├── terraform.tfvars            # Deployment variable values
+            |   └── variables.tf                # Deployment variables     
             ├── identity                 
             ├── operations-logging
             ├── operations-monitoring
@@ -46,27 +49,33 @@ Single code repo per platform level, each repo includes both level-specific depl
             ├── security                           
             └── modules                 # Module code
                 └── policy-assignment       # Storage resource modules
+                    ├── example                 # Module usage examples
+                    |   └── example.tf              # Example deployment script
                     ├── main.tf                 # Module template
                     ├── output.tf               # Module outputs
+                    ├── README.md               # Deployment documentation
                     └── variables.tf            # Module variables
 
 ## Codebase structure (future state)
 Single code repo per platform level, each repo includes level-specific deployment template (live) script code. Single code repo per custom module. 
 
     .
-    └── platform-level-[x]root  # One repo per platform level
-        ├── .github                 # GitHub configs
-        |   └── workflows                # Action configs
-        ├── .vscode                 # VS Code workspace configs
-        ├── docs                    # Repo docs
-        ├── scripts                 # Script code            
-        └── infra                   # Infra deployment scripts (live)
-            ├── [ repo ]                # Per code repo deployments [see design]
+    └── platform-level-[x]          # One repo per platform level
+        ├── .github                     # GitHub configs
+        |   └── workflows                   # Action configs
+        ├── .vscode                     # VS Code workspace configs
+        ├── docs                        # Repo docs
+        ├── scripts                     # Script code            
+        └── infra                       # Infra deployment scripts (live)
+            ├── [ repo ]                    # Per code repo deployments [see design]
             └── [ cloud-provider ]          # CSPs [aws, azure, gcp, github]
                 ├── [ mgmt-group ]          # Per mgmt. group deployments [see design]
                 |   ├── main.tf                 # Deployment script
-                |   ├── output.tf               # Deployment outputs
-                |   └── variables.tf            # Deployment variables
+                |   ├── output.tf               # Deployment output
+                |   ├── provider.tf             # Deployment provider
+                |   ├── README.md               # Deployment documentation
+                |   ├── terraform.tfvars        # Deployment variable values
+                |   └── variables.tf            # Deployment variables   
                 └── [ region ]              # Per region deployments [see design]
                     ├── automation              
                     ├── governance-finops       # Tech domain deployment
@@ -78,11 +87,13 @@ Single code repo per platform level, each repo includes level-specific deploymen
                     └── security
     
     .
-    └── azure-policy-assignment-module-root     # One repo per module
+    └── module-azure-policy-assignment          # One repo per module
         ├── .github                                 # GitHub configs
         |   └── workflows                               # Action configs
         ├── .vscode                                 # VS Code workspace configs
         ├── docs                                    # Repo docs
+        ├── example                                 # Module usage examples
+        |   └── example.tf                              # Example deployment script
         ├── scripts                                 # Script code 
         ├── main.tf                                 # Module template
         ├── output.tf                               # Module outputs
