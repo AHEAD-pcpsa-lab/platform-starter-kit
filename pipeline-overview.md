@@ -16,9 +16,9 @@ We are also making the following assumptions:
 
 ### Event Types
 
-- [ ] [Push](#stack-push)
-- [ ] [Pull Request Opened](#stack-pull-request-opened)
-- [ ] [Merged](#stack-merged-to-main)
+- [ ] [Push](#stack---push)
+- [ ] [Pull Request Opened](#stack---pull-request-opened)
+- [ ] [Merged](#stack---merged-to-main)
 
 ### Stack - Push
 
@@ -62,9 +62,9 @@ Within the module repositories we will focus a more concise set of tasks.  The g
 
 ### Event Types
 
-- [ ] [Push](#module-push)
-- [ ] [Pull Request Opened](#module-pull-request-opened)
-- [ ] [Merged](#module-merged-to-main)
+- [ ] [Push](#module---push)
+- [ ] [Pull Request Opened](#module---pull-request-opened)
+- [ ] [Merged](#module---merged-to-main)
 
 ### Module - Push
 
