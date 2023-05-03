@@ -10,7 +10,7 @@ We are also making the following assumptions:
 - We are using a `main` branch as the primary branch for the repository
 
 ## Branch protection rules
-- PR must be quashed and merged
+- PR must be squashed and merged
 
 
 
@@ -30,7 +30,6 @@ When code is pushed into a non `main` branch the following tasks will be perform
   - `terraform init`
   - `terraform fmt -check`
   - `terraform validate`
-  - `terraform plan`
 
 If any of the above steps return a non-zero exit code, the workflow will fail.  If all of the above steps return a zero exit code, the workflow will succeed.
 
